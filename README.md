@@ -46,16 +46,16 @@ Data flow
 
 
 06:47:51.950 > Input: \
-06:47:51.950 > <span style="color:green">FF FF FF FF</span> <span style="color:red">86</span> <span style="color:yellow">00 08</span> <span style="color:lightblue">60 E3 C0 14 89 27 91 D1</span> 00 \
-06:47:51.950 > 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 \
-06:47:51.950 > 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 \
-06:47:51.962 > 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 \
+06:47:51.950 > <span style="color:green">**FF FF FF FF**</span> <span style="color:red">86</span> <span style="color:yellow">**00 08**</span> <span style="color:lightblue">60 E3 C0 14 89 27 91 D1</span> _00_ \
+06:47:51.950 > _00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00_ \
+06:47:51.950 > _00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00_ \
+06:47:51.962 > _00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00_ \
 06:47:51.962 > \
 06:47:51.962 > Response: \
-06:47:51.962 > <span style="color:green">FF FF FF FF</span> <span style="color:red">86</span> <span style="color:yellow">00 11</span> <span style="color:lightblue">60 E3 C0 14 89 27 91 D1</span> <span style="color:lime">CB</span> \
-06:47:51.973 > <span style="color:lime">4E 3E A4</span> <span style="color:orange">02 01 01 01 05</span> 00 00 00 00 00 00 00 00 \
-06:47:51.973 > 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 \
-06:47:51.973 > 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 \
+06:47:51.962 > <span style="color:green">**FF FF FF FF**</span> <span style="color:red">86</span> <span style="color:yellow">**00 11**</span> <span style="color:lightblue">60 E3 C0 14 89 27 91 D1</span> <span style="color:lime">CB</span> \
+06:47:51.973 > <span style="color:lime">**4E 3E A4**</span> <span style="color:orange">02 01 01 01 05</span> _00 00 00 00 00 00 00 00_ \
+06:47:51.973 > _00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00_ \
+06:47:51.973 > _00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00_ \
 06:47:51.980 > 
 
 The different colors are associated with the content:
