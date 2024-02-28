@@ -69,3 +69,7 @@ The different colors are associated with the content:
     * <span style="color:orange">0x01 - Minor device version number</span>
     * <span style="color:orange">0x01 - Build device version number</span>
     * <span style="color:orange">0x05 - Capabilities flags = CTAPHID_WINK + CTAPHID_CBOR + CTAPHID_MSG</span>
+
+## Uses third party software
+
+* [JSON for Modern C++](https://github.com/nlohmann/json) (MIT License)
