@@ -8,9 +8,10 @@ Sample project to start is _libraries/USB/examples/CustomHIDDevice/CustomHIDDevi
 
 FIDO2 compliant report descriptor looks like this:
 
-#define HID_VENDOR_REPORT_SIZE 64
 
 ```cpp
+#define HID_VENDOR_REPORT_SIZE 64
+
 static const uint8_t report_descriptor[] = {HID_USAGE_PAGE_N(HID_USAGE_PAGE_FIDO, 2),
                                             HID_USAGE(HID_USAGE_FIDO_U2FHID),
                                             HID_COLLECTION(HID_COLLECTION_APPLICATION),
