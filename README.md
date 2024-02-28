@@ -8,6 +8,16 @@ Sample project to start is _libraries/USB/examples/CustomHIDDevice/CustomHIDDevi
 
 FIDO2 compliant report descriptor looks like this:
 
+<<<<<<< HEAD
+=======
+
+```
+Look! You can see my backticks.
+```
+
+
+#define HID_VENDOR_REPORT_SIZE 64
+>>>>>>> 9adfe54 (test)
 
 ```cpp
 #define HID_VENDOR_REPORT_SIZE 64
@@ -30,6 +40,8 @@ static const uint8_t report_descriptor[] = {HID_USAGE_PAGE_N(HID_USAGE_PAGE_FIDO
                                             HID_COLLECTION_END
 };
 ```
+
+Pitfal: Do not include a HID_REPORT_ID tag - the operating system will not accept the device!
 
 Important specifications can be found here:
 * [Client to Authenticator Protocol (CTAP)](https://fidoalliance.org/specs/fido-v2.0-ps-20190130/fido-client-to-authenticator-protocol-v2.0-ps-20190130.html)
