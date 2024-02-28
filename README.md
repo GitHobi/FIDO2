@@ -59,11 +59,11 @@ Data flow
 06:47:51.980 > 
 
 The different colors are associated with the content:
-* <span style="color:green">CID </span>
-* <span style="color:red">CMD </span>
-* <span style="color:yellow">BCNT </span>
+* <span style="color:green">CID </span> FF FF FF FF - is the broadcast CID, used to open a connection
+* <span style="color:red">CMD </span> 06 - with bit 8 set
+* <span style="color:yellow">BCNT </span> - length of the following data package
 * <span style="color:lightblue">Data - 8 byte nonce</span>
-* <span style="color:lime">4 byte channel ID</span>
+* <span style="color:lime">4 byte channel ID</span> - CID, created by the authenticator, to be used in following comminication.
 * <span style="color:orange">Device info</span>
     * <span style="color:orange">0x02 - CTAPHID protocol version identifier</span>
     * <span style="color:orange">0x01 - Major device version number</span>
