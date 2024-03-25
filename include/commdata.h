@@ -8,10 +8,22 @@ class CommData
 {
 private:
     std::vector<T> data;
+    size_t dataSize = 0;
 
 public:
     // Konstruktor
     CommData() { data.clear(); }
+
+    CommData(CommData &source, size_t start, size_t len)
+    {
+        ESP_LOGI("", "Initializing data from other data source, range %i - %i", start, start + len);
+        data.clear();
+        auto s = source.getData();
+        for (int i = start; i < (start + len); i++)
+        {
+            data.push_back(s[i]);
+        }
+    }
 
     // Destruktor
     ~CommData() {}
@@ -33,7 +45,7 @@ public:
         }
     }
 
-    void addArray(std::vector<T> &vector)
+    void addArray(const std::vector<T> &vector)
     {
         std::copy(vector.begin(), vector.end(), std::back_inserter(data));
     }
@@ -76,10 +88,59 @@ public:
         return data;
     }
 
+    void getData(size_t start, size_t count, CommData<T> &sub) const
+    {
+        if (start + count > data.size())
+        {
+            std::vector<T> subdata(data.begin() + start, data.end());
+            sub.addArray(subdata);
+        }
+        else
+        {
+            std::vector<T> subdata(data.begin() + start, data.begin() + start + count);
+            sub.addArray(subdata);
+        }
+
+        
+    }
+
+    void moveData(size_t start, size_t count, CommData<T> &sub)
+    {
+        getData(start, count, sub);
+        if (start + count > data.size())
+        {
+            data.erase(data.begin() + start, data.end());
+        }
+        else
+        {
+            data.erase(data.begin() + start, data.begin() + start + count);
+        }
+    }
+
+    bool getBytes(T *buffer, size_t len)
+    {
+        if (buffer == nullptr)
+            return false;
+
+        memcpy(buffer, (const void *)getData().data(), len);
+        return true;
+    }
+
     // Methode zum Löschen des Vektors
     void clear()
     {
         data.clear();
+        dataSize = 0;
+    }
+
+    void setDataSize(size_t newSize)
+    {
+        dataSize = newSize;
+    }
+
+    size_t getDataSize()
+    {
+        return dataSize;
     }
 
     bool compare(size_t start, const T *array, size_t count) const
@@ -144,10 +205,17 @@ public:
     void
     print(const char *txt = "") const
     {
+        size_t pos = 0;
+
         std::cout << txt << std::endl;
         int count = 0;
         for (const T &element : data)
         {
+            if ( count == 0 )
+            {
+                Serial.printf ( "%04X: ", pos);
+            }
+
             Serial.printf("%02X ", element);
             count++;
             if (count >= 16)
@@ -155,6 +223,8 @@ public:
                 count = 0;
                 Serial.printf("\n");
             }
+
+            pos++;
         }
         std::cout << std::endl;
     }

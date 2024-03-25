@@ -8,16 +8,7 @@ Sample project to start is _libraries/USB/examples/CustomHIDDevice/CustomHIDDevi
 
 FIDO2 compliant report descriptor looks like this:
 
-<<<<<<< HEAD
-=======
-
-```
-Look! You can see my backticks.
-```
-
-
 #define HID_VENDOR_REPORT_SIZE 64
->>>>>>> 9adfe54 (test)
 
 ```cpp
 #define HID_VENDOR_REPORT_SIZE 64
@@ -56,7 +47,6 @@ Data flow
 
 ### CTAPHID_INIT (0x06) 
 
-
 06:47:51.950 > Input: \
 06:47:51.950 > <span style="color:green">**FF FF FF FF**</span> <span style="color:red">86</span> <span style="color:yellow">**00 08**</span> <span style="color:lightblue">60 E3 C0 14 89 27 91 D1</span> _00_ \
 06:47:51.950 > _00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00_ \
@@ -82,6 +72,17 @@ The different colors are associated with the content:
     * <span style="color:orange">0x01 - Minor device version number</span>
     * <span style="color:orange">0x01 - Build device version number</span>
     * <span style="color:orange">0x05 - Capabilities flags = CTAPHID_WINK + CTAPHID_CBOR + CTAPHID_MSG</span>
+
+### CTABHID_CBOR 0x10
+
+```
+19:12:35.670 > Input: 
+19:12:35.670 > CB 4E 3E A4 90 00 01 04 00 00 00 00 00 00 00 00 
+19:12:35.681 > 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+19:12:35.681 > 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+19:12:35.681 > 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+```
+
 
 ## Uses third party software
 
